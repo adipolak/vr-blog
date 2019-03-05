@@ -3,6 +3,8 @@
 ## playgroud for fun ideas about how to create VR- personal websites/blogs
 
 
+Chceck it out [here](https://adipola.github.io/vr-blog/)
+
 # Licence
 
 License
