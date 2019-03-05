@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adi's Blog</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  </head>
+<body>
+
+  <a-scene id="scene">
+    <a-camera look-controls>
+      <a-cursor></a-cursor>
+      <a-text id="score" position="-0.3 0.5 -0.90" color="white" width="4" anchor="left"
+      position="-0.5 -0.1 0"></a-text>
+    </a-camera>
+
+    
+    <a-plane position="-0.3 2 -4" width="4"  material="color: blue;">
+      <a-text id="header" position="-1.10068 0.0213 0" text="value: Welcome to Adi's blog." anchor="left" > </a-text>
+    </a-plane> 
+
+    <a-entity geometry="primitive: plane" material="shader: ocean; color: blue; wave-height: 10"></a-entity>
+
+    <a-entity environment="preset: forest"></a-entity>
+
+   
+  </a-scene>
+
+  <a-entity id="tree" class="tree" gltf-model="tree.gltf" scale="0.01 0.01 0.01" position="0 1 -5"
+    animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 2000"
+    animation__shrink="property: scale; to: 0 0 0; dur: 300; loop: false; startEvents: shoot" 
+    animation__collect="property: position; to: 0 0 0; dur: 300; loop: false; startEvents: shoot">
+  </a-entity>
+
+  <script src="game.js"></script>
+</body>
+</html>
