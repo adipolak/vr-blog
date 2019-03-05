@@ -6,6 +6,6 @@
 # Licence
 
 License
-Copyright (C) 2019 Uri Shaked. Code released under the MIT license.
+Copyright (C) 2019 Adi Polak. Code released under the MIT license.
 
 Model tree - is by Google Poly - https://poly.google.com/view/aPFov1IaCWu
