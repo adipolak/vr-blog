@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adi's Page</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+    <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+    <script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="components/set-image.js"></script>
+  </head>
+<body>
+
+  
+  <a-scene id="scene">
+<!-- Camera + cursor. -->
+    <a-camera look-controls>
+      <a-cursor id="cursor"></a-cursor>
+    </a-camera>
+
+    
+    <a-plane position="-0.3 3 -4" width="4"  material="color: blue;">
+      <a-text id="header" position="-2 0 0" text="value: Welcome to Adi's page." anchor="left" 
+      animation__scale="property: scale; to: 1 1 1; delay: 1500; dur: 200; easing: easeOutCubic"
+      animation__position="property: position; to:-1.10068 0.0213 0 ; delay: 1000; dur: 1000; easing: easeOutCubic"> </a-text>
+    </a-plane> 
+
+    <a-assets>
+        <img id="twitter" src="models/twitter.png">
+    </a-assets>
+    
+    <a-entity id="links" position="-1.5 1.2 -3" > 
+        <a-link id="twitter_link" position="0 0 0" scale=".5 .5 .5" href="https://twitter.com/adipolak" title="My Twitter" image="#twitter"></a-link>
+        <a-link id="medium_link" position="1.5 0 0" scale=".5 .5 .5" href="https://medium.com/@adipolak" title="My Medium" mage="#twitter" ></a-link>
+    </a-entity>
+
+    <a-entity id="tree" class="tree" gltf-model="models/BubingaTree.gltf" scale="0.2 0.2 0.2" position="-4.01292 0.421 -3.67596"></a-entity>
+
+
+
+    <a-box id="orange-cube"  position="0 2 2" rotation="30 30 0" scale="0.2 0.2 0.2"
+    width="2" depth="2" height="2" color="#F16745"
+    href="https:twitter.com/AdiPolak" >
+
+  </a-box>
+
+
+
+    <a-sky color="#ECECEC"></a-sky>
+    <a-entity environment="preset: forest"></a-entity>
+
+  <!-- A generic box/logo made of animated elements -->
+  <a-entity id="logo" position="0.81031 1.50526 -1" scale=".5 .5 .5">
+    <a-entity id="box"
+      animation__scale="property: scale; to: 1 1 1; delay: 1000; dur: 1000; easing: easeOutCubic"
+      animation__position="property: position; to: 0 0 0; delay: 1000; dur: 1000; easing: easeOutCubic"
+      animation__rotation="property: rotation; to: 30 54 36; delay: 1000; dur: 1500; easing: easeOutCubic"
+      scale="0 0 0" position="-1 -2 -1" rotation ="0 -300 0">
+      <a-box width="0.25" depth="0.25" height="0.25" color="#EF2D5E"></a-box>
+
+      <a-entity scale="0.04 0.04 0.04">
+        <a-entity mixin="frame-edge" position="5 5 0" rotation="0 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="5 -5 0" rotation="0 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="-5 5 0" rotation="0 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="-5 -5 0" rotation="0 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="0 5 5" rotation="0 90 0"></a-entity>
+        <a-entity mixin="frame-edge" position="0 5 -5" rotation="0 90 0"></a-entity>
+        <a-entity mixin="frame-edge" position="0 -5 5" rotation="0 90 0"></a-entity>
+        <a-entity mixin="frame-edge" position="0 -5 -5" rotation="0 90 0"></a-entity>
+        <a-entity mixin="frame-edge" position="5 0 5" rotation="90 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="5 0 -5" rotation="90 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="-5 0 5" rotation="90 0 0"></a-entity>
+        <a-entity mixin="frame-edge" position="-5 0 -5" rotation="90 0 0"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="dots1" rotation="0 0 45" animation="property: scale; to: 1 0.6 1; delay: 900; dur: 900; easing: easeOutCubic" scale="1 0 1">
+      <a-cylinder position="0 2 0" radius="0.04" height="2" color="#EF2D5E" open-ended="true" side="double"
+                  animation="property: scale; to: 1 0 1; delay: 800; dur: 900; easing: easeOutCubic"></a-cylinder>
+      <a-cylinder position="0 -2 0" radius="0.04" height="2" color="#EF2D5E" open-ended="true" side="double"
+                  animation="property: scale; to: 1 0 1; delay: 800; dur: 900; easing: easeOutCubic"></a-cylinder>
+    </a-entity>
+
+    <a-entity id="dots1" rotation="0 0 -45" animation="property: scale; from: 1 0 1; to: 1 0.6 1; delay: 900; dur: 900; easing: easeOutCubic" scale="1 0 1">
+      <a-cylinder position="0 2 0" radius="0.04" height="2" color="#EF2D5E" open-ended="true" side="double"
+                  animation="property: scale; to: 1 0 1; delay: 1000; dur: 900; easing: easeOutCubic" scale="1 1.25 1"></a-cylinder>
+      <a-cylinder position="0 -2 0" radius="0.04" height="2" color="#EF2D5E" open-ended="true" side="double"
+                  animation="property: scale; to: 1 0 1; delay: 1000; dur: 900; easing: easeOutCubic" scale="1 1.25 1"></a-cylinder>
+    </a-entity>
+
+
+  </a-entity>
+
+  <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+  <a-light type="ambient" color="#fff"></a-light>
+
+
+   
+  </a-scene>
+
+  <script src="game.js"></script>
+</body>
+</html>
