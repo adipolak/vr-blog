@@ -33,10 +33,11 @@
   <a-scene id="scene">
 <!-- Camera + cursor. -->
     <a-camera look-controls>
-      <a-cursor id="cursor"></a-cursor>
+      <a-cursor></a-cursor>
     </a-camera>
 
-    
+    <a-entity laser-controls></a-entity>
+
     <a-plane position="-0.3 3 -4" width="4"  material="color: blue;">
       <a-text id="header" position="-2 0 0" text="value: Welcome to Adi's page." anchor="left" 
       animation__scale="property: scale; to: 1 1 1; delay: 1500; dur: 200; easing: easeOutCubic"
@@ -44,18 +45,36 @@
     </a-plane> 
 
     <a-assets>
-        <img id="twitter" src="models/twitter.png" scale="0.02 0.02 0.02"   width="20px" height="20px"
+        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg" preload="auto"></audio>
+        <img id="twitter" src="models/twitter.png" scale="0.02 0.02 0.02"   width="100%" height="100%"
         object-fit="cover">
 
-        <img id="apache_spark" src="models/apache_spark_logo.png" scale="0.02 0.02 0.02"   width="20px" height="20px"
+        <img id="apache_spark" src="models/apache_spark_logo.png" scale="0.02 0.02 0.02"    width="100%" height="100%"
         object-fit="cover">
     </a-assets>
     
     <a-entity id="links" position="-1.5 1.2 -3" > 
-        <a-link id="twitter_link" position="0 0 0" scale=".5 .5 .5" href="https://twitter.com/adipolak" title="Twitter" image="#twitter"></a-link>
-        <a-link id="medium_link" position="1.5 0 0" scale=".5 .5 .5" href="https://medium.com/@adipolak" title="Medium" ></a-link>
+
+        <a-link id="twitter_link" position="0 0 0" scale=".5 .5 .5" href="https://twitter.com/adipolak" 
+        title="Twitter" image="#twitter" onclick="document.getElementById('#click-sound').play()" 
+        animation=" pulse 5s infinite;
+          @keyframes pulse {
+            0% {
+              property: scale; to: 0.3 0.3 0.3;
+            }
+            100% {
+              property: scale; to: 0.55 0.55 0.55;
+            };
+            startEvents: mousedown;"
+        > </a-link>>
+
+        <a-link id="medium_link" position="1.5 0 0" scale=".5 .5 .5" href="https://medium.com/@adipolak" 
+        title="Medium" sound="on: click; src: #click-sound"
+        animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown"> </a-link>>
+
         <a-link id="learn_spark_link" position="3 0 0" scale=".5 .5 .5" href="https://learn-apache-spark.dev" 
-        title="Learn Apache Spark" image="#apache_spark"></a-link>
+        title="Learn Apache Spark" image="#apache_spark" sound="on: click; src: #click-sound"
+        > </a-link>>
     </a-entity>
 
     <a-entity id="tree" class="tree" gltf-model="models/BubingaTree.gltf" scale="0.2 0.2 0.2" position="-4.01292 0.421 -3.67596"></a-entity>
