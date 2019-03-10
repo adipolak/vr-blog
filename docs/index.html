@@ -8,14 +8,24 @@
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
     <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
     <script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
-    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script> -->
+    <!-- <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script src="components/set-image.js"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script> -->
+    <!-- <script src="components/set-image.js"></script> -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135946791-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-135946791-1');
+    </script>
   </head>
 <body>
 
@@ -34,12 +44,18 @@
     </a-plane> 
 
     <a-assets>
-        <img id="twitter" src="models/twitter.png">
+        <img id="twitter" src="models/twitter.png" scale="0.02 0.02 0.02"   width="20px" height="20px"
+        object-fit="cover">
+
+        <img id="apache_spark" src="models/apache_spark_logo.png" scale="0.02 0.02 0.02"   width="20px" height="20px"
+        object-fit="cover">
     </a-assets>
     
     <a-entity id="links" position="-1.5 1.2 -3" > 
-        <a-link id="twitter_link" position="0 0 0" scale=".5 .5 .5" href="https://twitter.com/adipolak" title="My Twitter" image="#twitter"></a-link>
-        <a-link id="medium_link" position="1.5 0 0" scale=".5 .5 .5" href="https://medium.com/@adipolak" title="My Medium" mage="#twitter" ></a-link>
+        <a-link id="twitter_link" position="0 0 0" scale=".5 .5 .5" href="https://twitter.com/adipolak" title="Twitter" image="#twitter"></a-link>
+        <a-link id="medium_link" position="1.5 0 0" scale=".5 .5 .5" href="https://medium.com/@adipolak" title="Medium" ></a-link>
+        <a-link id="learn_spark_link" position="3 0 0" scale=".5 .5 .5" href="https://learn-apache-spark.dev" 
+        title="Learn Apache Spark" image="#apache_spark"></a-link>
     </a-entity>
 
     <a-entity id="tree" class="tree" gltf-model="models/BubingaTree.gltf" scale="0.2 0.2 0.2" position="-4.01292 0.421 -3.67596"></a-entity>
@@ -47,10 +63,7 @@
 
 
     <a-box id="orange-cube"  position="0 2 2" rotation="30 30 0" scale="0.2 0.2 0.2"
-    width="2" depth="2" height="2" color="#F16745"
-    href="https:twitter.com/AdiPolak" >
-
-  </a-box>
+    width="2" depth="2" height="2" color="#F16745"></a-box>
 
 
 
@@ -58,11 +71,12 @@
     <a-entity environment="preset: forest"></a-entity>
 
   <!-- A generic box/logo made of animated elements -->
-  <a-entity id="logo" position="0.81031 1.50526 -1" scale=".5 .5 .5">
+  <a-entity id="logo" position="0.81031 2 -1" scale=".5 .5 .5">
+
     <a-entity id="box"
       animation__scale="property: scale; to: 1 1 1; delay: 1000; dur: 1000; easing: easeOutCubic"
       animation__position="property: position; to: 0 0 0; delay: 1000; dur: 1000; easing: easeOutCubic"
-      animation__rotation="property: rotation; to: 30 54 36; delay: 1000; dur: 1500; easing: easeOutCubic"
+      animation__rotation="property: rotation; to: 30 54 36;  dur: 5000; easing: easeOutCubic"
       scale="0 0 0" position="-1 -2 -1" rotation ="0 -300 0">
       <a-box width="0.25" depth="0.25" height="0.25" color="#EF2D5E"></a-box>
 
@@ -106,6 +120,6 @@
    
   </a-scene>
 
-  <script src="game.js"></script>
+  <script src="blog.js"></script>
 </body>
 </html>
