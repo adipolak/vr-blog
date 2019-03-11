@@ -56,24 +56,17 @@
     <a-entity id="links" position="-1.5 1.2 -3" > 
 
         <a-link id="twitter_link" position="0 0 0" scale=".5 .5 .5" href="https://twitter.com/adipolak" 
-        title="Twitter" image="#twitter" onclick="document.getElementById('#click-sound').play()" 
-        animation=" pulse 5s infinite;
-          @keyframes pulse {
-            0% {
-              property: scale; to: 0.3 0.3 0.3;
-            }
-            100% {
-              property: scale; to: 0.55 0.55 0.55;
-            };
-            startEvents: mousedown;"
+        title="Twitter" image="#twitter" sound="on: click; src: #click-sound"
+        animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown"
         > </a-link>>
 
         <a-link id="medium_link" position="1.5 0 0" scale=".5 .5 .5" href="https://medium.com/@adipolak" 
         title="Medium" sound="on: click; src: #click-sound"
-        animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown"> </a-link>>
+        animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown;"> </a-link>>
 
         <a-link id="learn_spark_link" position="3 0 0" scale=".5 .5 .5" href="https://learn-apache-spark.dev" 
         title="Learn Apache Spark" image="#apache_spark" sound="on: click; src: #click-sound"
+        animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown"
         > </a-link>>
     </a-entity>
 
