@@ -1,6 +1,6 @@
 # vr-blog
 
-## Playgroud for fun ideas about how to create VR - personal websites/blogs
+## Playgroud for fun ideas about how to create VR / XR - personal websites/blogs
 
 
 Check it out [here](https://adi-polak.dev/).
@@ -10,4 +10,4 @@ Check it out [here](https://adi-polak.dev/).
 License
 Copyright (C) 2019 Adi Polak. Code released under the MIT license.
 
-Model BubingaTree - is by Google Poly - https://poly.google.com/view/7qYSFCnZTB6
+Model BubingaTree - by Google Poly - https://poly.google.com/view/7qYSFCnZTB6
