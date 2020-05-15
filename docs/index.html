@@ -51,6 +51,13 @@
 
         <img id="apache_spark" src="models/apache_spark_logo.png" scale="0.02 0.02 0.02"    width="100%" height="100%"
         object-fit="cover">
+
+        <img id="dev" src="models/dev-logo.png" scale="0.02 0.02 0.02"    width="100%" height="100%"
+        object-fit="cover">
+
+        <img id="linkedin" src="models/linkedinlogo.png" scale="0.02 0.02 0.02"    width="100%" height="100%"
+        object-fit="cover">
+  
     </a-assets>
     
     <a-entity id="links" position="-1.5 1.2 -3" > 
@@ -67,10 +74,15 @@
         title="Blog" sound="on: click; src: #click-sound"
         animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown;"> </a-link>>
 
+        <a-image src="#dev"></a-image>
+
         <a-link id="linkedIn" position="3 0 0" scale=".5 .5 .5" href="https://www.linkedin.com/in/adi-polak-68548365/" 
-        title="LinkedIn" image="#apache_spark" sound="on: click; src: #click-sound"
+        title="LinkedIn" image="#linkedin" sound="on: click; src: #click-sound"
         animation__minimize="property: scale; to: 0.45 0.45 0.45; dur: 500; startEvents: mousedown"
         > </a-link>>
+
+        <a-image src="#linkedin"></a-image>
+        
     </a-entity>
 
     <a-entity id="tree" class="tree" gltf-model="models/BubingaTree.gltf" scale="0.2 0.2 0.2" position="-4.01292 0.421 -3.67596"></a-entity>
